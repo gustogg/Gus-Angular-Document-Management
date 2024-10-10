@@ -1,0 +1,33 @@
+<div class="tw-container tw-mx-auto tw-my-10">
+  <div class="tw-flex tw-justify-end tw-mb-6">
+    <a [routerLink]="['/pic/create']" class="tw-btn tw-border tw-border-neutral-600 hover:tw-bg-slate-500 hover:tw-text-white tw-shadow-sm tw-px-4 tw-py-2">New Picture</a>
+  </div>
+
+  <div class="tw-bg-white tw-shadow-md tw-rounded-lg">
+    <div class="tw-p-4 tw-border-b">
+      <h5 class="tw-text-xl tw-font-semibold">Picture Manager</h5>
+    </div>
+    <table class="tw-min-w-full tw-table-auto">
+      <thead class="tw-bg-gray-100">
+        <tr>
+          <th class="tw-px-4 tw-py-2 tw-text-left">Picture</th>
+          <th class="tw-px-4 tw-py-2 tw-text-left">Created</th>
+          <th class="tw-px-4 tw-py-2 tw-text-left">Updated</th>
+          <th class="tw-px-4 tw-py-2 tw-text-left">Owner</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="pics?.results">
+        <tr *ngFor="let p of pics.results" class="tw-border-t">
+          <td class="tw-px-4 tw-py-2">
+            <a [routerLink]="['/pic/detail', p.id]" class="tw-text-decoration-none">
+              <img src="{{ p.src }}" class="tw-h-24 tw-w-auto tw-object-cover" />
+            </a>
+          </td>
+          <td class="tw-px-4 tw-py-2">{{ p.created | date : "short" }}</td>
+          <td class="tw-px-4 tw-py-2">{{ p.updated | date : "short" }}</td>
+          <td class="tw-px-4 tw-py-2">{{ p.owner }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

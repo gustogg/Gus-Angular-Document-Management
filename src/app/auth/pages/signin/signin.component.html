@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row  d-flex justify-content-center align-content-center vh-100">
+    <div class="col-4 tw-z-50 tw-w-screen tw-h-screen tw-backdrop-blur-xl">
+      <div class="card shadow tw-w-80 tw-mx-auto tw-mt-40">
+        <div class="card-body">
+          <h5 class="card-title tw-font-bold tw-text-xl ">Sign In</h5>
+          <form [formGroup]="form" class="my-3" (submit)="onSubmit()">
+            <div class="form-group mb-3">
+              <label>Username</label>
+              <input
+                type="text"
+                formControlName="username"
+                class="form-control"
+              />
+              <app-message-validation
+                [field]="form.get('username')"
+                [label]="'username'"
+              ></app-message-validation>
+            </div>
+            <div class="form-group mb-3">
+              <label>Password</label>
+              <input
+                type="password"
+                formControlName="password"
+                class="form-control"
+              />
+              <app-message-validation
+                [field]="form.get('password')"
+                [label]="'password'"
+              ></app-message-validation>
+            </div>
+
+            <button class="btn tw-bg-slate-400 tw-font-bold tw-text-slate-100 hover:tw-shadow-md hover:tw-font-bold hover:tw-text-white hover:tw-bg-slate-600" type="submit">Sign In</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

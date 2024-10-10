@@ -1,0 +1,31 @@
+<div class="tw-container tw-mx-auto tw-my-10">
+  <div class="tw-row">
+    <div class="tw-col-12">
+      <div class="tw-bg-white tw-shadow-md tw-rounded-lg">
+        <div class="tw-p-4">
+          <h5 class="tw-text-xl tw-font-semibold tw-mb-3">New Picture</h5>
+          <form #form="ngForm" (submit)="onSubmit(form)">
+            <div class="tw-mb-4">
+              <input
+                #file
+                type="file"
+                (change)="upload($event)"
+                class="tw-border tw-border-gray-300 tw-rounded-lg tw-px-3 tw-py-2 tw-w-full"
+                ngModel
+                name="file"
+                required
+              />
+            </div>
+            <button
+              [disabled]="form.invalid"
+              type="submit"
+              class="tw-bg-blue-500 tw-text-white tw-px-4 tw-py-2 tw-rounded-lg tw-shadow-md hover:tw-bg-blue-600"
+            >
+              Upload
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

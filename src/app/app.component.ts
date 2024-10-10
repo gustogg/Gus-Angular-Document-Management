@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { faHome, faPhone, faInfoCircle, faUserPlus, faUserCircle } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'bcaf-0409';
+  icons = {
+    home: faHome,
+    phone: faPhone,
+    info: faInfoCircle,
+    user: faUserPlus,
+    github: faUserCircle
+
+
+  }
+
+  
 }

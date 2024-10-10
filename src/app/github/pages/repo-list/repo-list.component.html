@@ -1,0 +1,21 @@
+<div *ngIf="isLoggedIn()" class="tw-w-1/2 tw-ml-20 tw-my-auto tw-h-max tw-mt-48">
+    <h1 class="tw-text-3xl tw-font-bold tw-mb-6 tw-text-gray-800">List of Repos</h1>
+    
+    <div class="tw-overflow-x-auto tw-shadow-md tw-rounded-md">
+      <table class="tw-min-w-full tw-bg-white tw-rounded-md tw-border-collapse">
+        <thead class="tw-bg-gray-100 tw-text-left tw-text-gray-600">
+          <tr>
+            <th class="tw-px-6 tw-py-3 tw-border-b tw-text-sm tw-font-semibold">ID</th>
+            <th class="tw-px-6 tw-py-3 tw-border-b tw-text-sm tw-font-semibold">Repository Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let repository of repositories" class="tw-bg-white hover:tw-bg-gray-50">
+            <td class="tw-px-6 tw-py-4 tw-border-b tw-text-gray-800">{{ repository.id }}</td>
+            <td class="tw-px-6 tw-py-4 tw-border-b tw-text-gray-800">{{ repository.name }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

@@ -1,0 +1,40 @@
+<div class="container my-5">
+    <div class="row my-4">
+      <div class="col d-flex justify-content-right">
+        <a [routerLink]="['/doc/new']" class="btn tw-border-neutral-600 hover:tw-bg-slate-500 hover:tw-text-white tw-shadow-sm">Add New File +</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title tw-font-bold tw-text-3xl">File Manager</h5>
+          </div>
+          <table class="table striped">
+            <thead>
+              <tr>
+                <th>File</th>
+                <th>Created</th>
+                <th>Updated</th>
+                <th>Owner</th>
+              </tr>
+            </thead>
+            <tbody *ngIf="docs?.results">
+              <tr *ngFor="let f of docs.results">
+                <td>
+                  <a [routerLink]="['/doc/detail', f.id]" class="text-decoration-none">
+                    {{ f.filename }}
+                  </a>
+                </td>
+                <td>{{ f.created | date : "short" }}</td>
+                <td>{{ f.updated | date : "short" }}</td>
+                <td>{{ f.user?.username }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
